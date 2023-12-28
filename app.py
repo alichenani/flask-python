@@ -7,7 +7,7 @@ from nltk.stem import WordNetLemmatizer
 
 app = Flask(__name__)
 
-# @app.route('/')
+@app.route('/')
 def hello_world():
     # Download NLTK resources
     nltk.download('punkt')
@@ -40,7 +40,7 @@ def hello_world():
         answer = preprocess(pair['answer'])
         preprocessed_data.append({'question': question, 'answer': answer})
 
-    # Print preprocessed data for the first Q&A pair
+    # Print preprocessed data for the first Q&A pair 
     print("Original Question:", qa_data[0]['question'])
     print("Preprocessed Question:", preprocessed_data[0]['question'])
     print("\nOriginal Answer:", qa_data[0]['answer'])
@@ -51,5 +51,6 @@ def hello_world():
     preprocessed_example = preprocess(custom_example)
     print("\nCustom Example:", custom_example)
     print("Preprocessed Example:", preprocessed_example)
-hello_world()
+    return "Preprocessed Example:" + preprocessed_example
+# hello_world()
 print("end")
